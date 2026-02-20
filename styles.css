@@ -5,17 +5,17 @@
 }
 
 :root {
-    --bg-primary: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --accent-blue: #1e40af;
-    --accent-red: #dc2626;
-    --border: #e2e8f0;
+    --bg-dark: #0a0a0f;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent-blue: #3b82f6;
+    --accent-red: #ef4444;
+    --border: #1e293b;
 }
 
 body {
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg-primary);
+    background: var(--bg-dark);
     color: var(--text-primary);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -28,22 +28,24 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 50vh;
-    background: linear-gradient(
-        180deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(255, 255, 255, 0.9) 70%,
-        rgba(255, 255, 255, 1) 100%
-    ),
-    url('https://images.unsplash.com/photo-1555991855-1f3319bc8e8a?auto=format&fit=crop&w=2000&q=80');
+    height: 100vh;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(10, 10, 15, 0.7) 0%,
+            rgba(10, 10, 15, 0.9) 50%,
+            rgba(10, 10, 15, 1) 100%
+        ),
+        url('https://images.unsplash.com/photo-1555991855-1f3319bc8e8a?auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
-    background-position: center 30%;
+    background-position: center;
     z-index: 0;
+    opacity: 0.4;
 }
 
 /* Container */
 .container {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 3rem 2rem;
     position: relative;
@@ -55,29 +57,32 @@ body {
 
 main {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 4rem 0;
 }
 
 /* Hero Content */
 .hero-content {
-    margin-bottom: 5rem;
+    margin-bottom: 6rem;
     text-align: center;
 }
 
 .site-title {
     font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: clamp(3.5rem, 9vw, 6rem);
+    font-size: clamp(3.5rem, 10vw, 6rem);
     font-weight: 600;
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
     color: var(--text-primary);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
 }
 
 .tagline {
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: clamp(1.25rem, 3vw, 1.65rem);
-    font-weight: 500;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-weight: 400;
     line-height: 1.5;
     color: var(--text-secondary);
     margin-bottom: 2rem;
@@ -87,28 +92,11 @@ main {
 }
 
 .description {
-    font-size: clamp(1.05rem, 2vw, 1.15rem);
+    font-size: clamp(1rem, 2vw, 1.1rem);
     line-height: 1.7;
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
-}
-
-/* Skyline Section */
-.skyline-section {
-    margin: 4rem auto 5rem;
-    padding: 3rem 2rem;
-    background: linear-gradient(135deg, rgba(30, 64, 175, 0.03), rgba(220, 38, 38, 0.03));
-    border-radius: 8px;
-}
-
-.skyline {
-    width: 100%;
-    max-width: 900px;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    color: var(--accent-blue);
 }
 
 /* Form Section */
@@ -118,12 +106,13 @@ main {
 }
 
 .form-title {
-    font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 1.75rem);
     font-weight: 600;
     margin-bottom: 2rem;
     text-align: center;
     color: var(--text-primary);
+    letter-spacing: -0.01em;
 }
 
 .signup-form {
@@ -142,8 +131,8 @@ main {
     padding: 1rem 1.25rem;
     font-size: 1rem;
     font-family: inherit;
-    background: white;
-    border: 2px solid var(--border);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
     border-radius: 8px;
     color: var(--text-primary);
     transition: all 0.2s ease;
@@ -152,11 +141,12 @@ main {
 .form-row input:focus {
     outline: none;
     border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 .form-row input::placeholder {
-    color: #94a3b8;
+    color: #64748b;
 }
 
 .submit-btn {
@@ -176,7 +166,7 @@ main {
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.3);
+    box-shadow: 0 10px 30px -5px rgba(59, 130, 246, 0.4);
 }
 
 .submit-btn:active {
@@ -199,16 +189,16 @@ main {
 
 .form-message.success {
     display: block;
-    background: #f0fdf4;
-    border: 2px solid #86efac;
-    color: #166534;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #86efac;
 }
 
 .form-message.error {
     display: block;
-    background: #fef2f2;
-    border: 2px solid #fca5a5;
-    color: #991b1b;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
 }
 
 /* Footer */
@@ -217,7 +207,7 @@ footer {
     padding: 3rem 0 2rem;
     margin-top: auto;
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 /* Responsive Design */
@@ -231,21 +221,12 @@ footer {
     }
 
     .hero-content {
-        margin-bottom: 3rem;
-    }
-
-    .skyline-section {
-        margin: 3rem auto 4rem;
-        padding: 2rem 1rem;
+        margin-bottom: 4rem;
     }
 
     .form-row {
         flex-direction: column;
         gap: 0.75rem;
-    }
-
-    .hero-background {
-        height: 40vh;
     }
 }
 
@@ -254,17 +235,8 @@ footer {
         padding: 1.5rem 1rem;
     }
 
-    .skyline-section {
-        margin: 2rem auto 3rem;
-        padding: 1.5rem 0.75rem;
-    }
-
-    .skyline {
-        max-width: 100%;
-    }
-
-    .hero-background {
-        height: 35vh;
+    .hero-content {
+        margin-bottom: 3rem;
     }
 
     .submit-btn {
