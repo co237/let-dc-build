@@ -5,11 +5,12 @@
 }
 
 :root {
-    --bg-primary: #FAFAF9;
-    --text-primary: #1a1a1a;
-    --text-secondary: #525252;
-    --accent: #2563eb;
-    --border: #e5e5e5;
+    --bg-primary: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --accent-blue: #1e40af;
+    --accent-red: #dc2626;
+    --border: #e2e8f0;
 }
 
 body {
@@ -27,12 +28,12 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60vh;
+    height: 50vh;
     background: linear-gradient(
         180deg,
-        rgba(250, 250, 249, 0.3) 0%,
-        rgba(250, 250, 249, 0.85) 60%,
-        rgba(250, 250, 249, 1) 100%
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.9) 70%,
+        rgba(255, 255, 255, 1) 100%
     ),
     url('https://images.unsplash.com/photo-1555991855-1f3319bc8e8a?auto=format&fit=crop&w=2000&q=80');
     background-size: cover;
@@ -42,7 +43,7 @@ body {
 
 /* Container */
 .container {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 3rem 2rem;
     position: relative;
@@ -59,24 +60,24 @@ main {
 
 /* Hero Content */
 .hero-content {
-    margin-bottom: 6rem;
+    margin-bottom: 5rem;
     text-align: center;
 }
 
 .site-title {
     font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: clamp(3rem, 8vw, 5rem);
+    font-size: clamp(3.5rem, 9vw, 6rem);
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1.05;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
 }
 
 .tagline {
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-size: clamp(1.25rem, 3vw, 1.75rem);
-    font-weight: 400;
+    font-size: clamp(1.25rem, 3vw, 1.65rem);
+    font-weight: 500;
     line-height: 1.5;
     color: var(--text-secondary);
     margin-bottom: 2rem;
@@ -86,7 +87,7 @@ main {
 }
 
 .description {
-    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    font-size: clamp(1.05rem, 2vw, 1.15rem);
     line-height: 1.7;
     color: var(--text-secondary);
     max-width: 600px;
@@ -95,32 +96,30 @@ main {
 
 /* Skyline Section */
 .skyline-section {
-    margin: 5rem 0;
-    padding: 3rem 0;
+    margin: 4rem auto 5rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.03), rgba(220, 38, 38, 0.03));
+    border-radius: 8px;
 }
 
 .skyline {
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
     height: auto;
     margin: 0 auto;
     display: block;
-    color: var(--text-secondary);
+    color: var(--accent-blue);
 }
 
 /* Form Section */
 .form-section {
-    background: white;
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    padding: 3rem;
-    max-width: 700px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .form-title {
     font-family: 'IBM Plex Serif', Georgia, serif;
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
     font-weight: 600;
     margin-bottom: 2rem;
     text-align: center;
@@ -130,57 +129,58 @@ main {
 .signup-form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
 
+.form-row {
+    display: flex;
+    gap: 0.75rem;
+}
+
 .form-row input {
-    width: 100%;
-    padding: 0.875rem 1rem;
+    flex: 1;
+    padding: 1rem 1.25rem;
     font-size: 1rem;
     font-family: inherit;
-    background: var(--bg-primary);
-    border: 1px solid var(--border);
-    border-radius: 2px;
+    background: white;
+    border: 2px solid var(--border);
+    border-radius: 8px;
     color: var(--text-primary);
     transition: all 0.2s ease;
 }
 
 .form-row input:focus {
     outline: none;
-    border-color: var(--accent);
-    background: white;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
 }
 
 .form-row input::placeholder {
-    color: #a3a3a3;
+    color: #94a3b8;
 }
 
 .submit-btn {
-    padding: 0.875rem 2.5rem;
+    padding: 1rem 3rem;
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: 600;
     font-family: inherit;
-    background: var(--accent);
+    background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-red) 100%);
     color: white;
     border: none;
-    border-radius: 2px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease;
     align-self: center;
+    margin-top: 0.5rem;
 }
 
 .submit-btn:hover {
-    background: #1d4ed8;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.3);
 }
 
 .submit-btn:active {
-    transform: translateY(1px);
+    transform: translateY(0);
 }
 
 .submit-btn:disabled {
@@ -190,34 +190,34 @@ main {
 
 .form-message {
     padding: 1rem;
-    border-radius: 2px;
+    border-radius: 8px;
     text-align: center;
     font-size: 0.95rem;
     display: none;
+    margin-top: 0.5rem;
 }
 
 .form-message.success {
     display: block;
     background: #f0fdf4;
-    border: 1px solid #86efac;
+    border: 2px solid #86efac;
     color: #166534;
 }
 
 .form-message.error {
     display: block;
     background: #fef2f2;
-    border: 1px solid #fca5a5;
+    border: 2px solid #fca5a5;
     color: #991b1b;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    padding: 2rem 0;
+    padding: 3rem 0 2rem;
     margin-top: auto;
     color: var(--text-secondary);
     font-size: 0.9rem;
-    border-top: 1px solid var(--border);
 }
 
 /* Responsive Design */
@@ -231,24 +231,21 @@ footer {
     }
 
     .hero-content {
-        margin-bottom: 4rem;
+        margin-bottom: 3rem;
     }
 
     .skyline-section {
-        margin: 3rem 0;
-        padding: 2rem 0;
-    }
-
-    .form-section {
-        padding: 2rem 1.5rem;
+        margin: 3rem auto 4rem;
+        padding: 2rem 1rem;
     }
 
     .form-row {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 0.75rem;
     }
 
     .hero-background {
-        height: 50vh;
+        height: 40vh;
     }
 }
 
@@ -258,32 +255,30 @@ footer {
     }
 
     .skyline-section {
-        margin: 2rem 0;
-        padding: 1rem 0;
+        margin: 2rem auto 3rem;
+        padding: 1.5rem 0.75rem;
     }
 
     .skyline {
         max-width: 100%;
     }
 
-    .form-section {
-        padding: 1.5rem 1rem;
-        border-left: none;
-        border-right: none;
+    .hero-background {
+        height: 35vh;
     }
 
-    .hero-background {
-        height: 40vh;
+    .submit-btn {
+        width: 100%;
     }
 }
 
 /* Selection */
 ::selection {
-    background: var(--accent);
+    background: var(--accent-blue);
     color: white;
 }
 
 ::-moz-selection {
-    background: var(--accent);
+    background: var(--accent-blue);
     color: white;
 }
