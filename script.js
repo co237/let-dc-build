@@ -4,13 +4,14 @@ document.getElementById('signup-form').addEventListener('submit', async function
 
     const form = e.target;
     const submitBtn = form.querySelector('.submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
     const formMessage = document.getElementById('form-message');
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
 
     // Disable button during submission
     submitBtn.disabled = true;
-    submitBtn.querySelector('.btn-text').textContent = 'Submitting...';
+    btnText.textContent = 'Submitting...';
 
     // Hide previous messages
     formMessage.className = 'form-message';
@@ -46,6 +47,6 @@ document.getElementById('signup-form').addEventListener('submit', async function
     } finally {
         // Re-enable button
         submitBtn.disabled = false;
-        submitBtn.querySelector('.btn-text').textContent = 'Submit';
+        btnText.textContent = 'Submit';
     }
 });
