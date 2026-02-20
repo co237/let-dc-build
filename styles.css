@@ -22,27 +22,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hero Background */
-.hero-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background:
-        linear-gradient(
-            180deg,
-            rgba(10, 10, 15, 0.7) 0%,
-            rgba(10, 10, 15, 0.9) 50%,
-            rgba(10, 10, 15, 1) 100%
-        ),
-        url('https://images.unsplash.com/photo-1555991855-1f3319bc8e8a?auto=format&fit=crop&w=2000&q=80');
-    background-size: cover;
-    background-position: center;
-    z-index: 0;
-    opacity: 0.4;
-}
-
 /* Container */
 .container {
     max-width: 900px;
