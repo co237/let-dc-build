@@ -70,12 +70,13 @@ main {
     line-height: 1.1;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .tagline {
-    font-family: 'IBM Plex Serif', Georgia, serif;
+    font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     font-size: clamp(1.25rem, 3vw, 1.75rem);
-    font-style: italic;
+    font-weight: 400;
     line-height: 1.5;
     color: var(--text-secondary);
     margin-bottom: 2rem;
@@ -90,6 +91,21 @@ main {
     color: var(--text-secondary);
     max-width: 600px;
     margin: 0 auto;
+}
+
+/* Skyline Section */
+.skyline-section {
+    margin: 5rem 0;
+    padding: 3rem 0;
+}
+
+.skyline {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    color: var(--text-secondary);
 }
 
 /* Form Section */
@@ -218,6 +234,11 @@ footer {
         margin-bottom: 4rem;
     }
 
+    .skyline-section {
+        margin: 3rem 0;
+        padding: 2rem 0;
+    }
+
     .form-section {
         padding: 2rem 1.5rem;
     }
@@ -234,6 +255,15 @@ footer {
 @media (max-width: 480px) {
     .container {
         padding: 1.5rem 1rem;
+    }
+
+    .skyline-section {
+        margin: 2rem 0;
+        padding: 1rem 0;
+    }
+
+    .skyline {
+        max-width: 100%;
     }
 
     .form-section {
