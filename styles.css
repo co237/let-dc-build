@@ -33,7 +33,7 @@ body {
     background-image: url('https://travel.usnews.com/images/Capitol1_Getty.jpg');
     background-size: cover;
     background-position: center;
-    filter: blur(60px) brightness(0.4);
+    filter: blur(20px) brightness(0.4);
     transform: scale(1.1);
     z-index: 0;
     opacity: 0.6;
