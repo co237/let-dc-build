@@ -19,7 +19,7 @@ document.getElementById('signup-form').addEventListener('submit', async function
 
     try {
         // Replace this URL with your Google Apps Script web app URL
-        const scriptURL = 'hhttps://script.google.com/macros/s/AKfycbw2E8VmNI7xaIVO9mZAQfyXrdYOIfn11neHuEt4AGNzYQ9pCm86qoWOxLBadY95SqDkuQ/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwlHK0TVNUDbXiU7BycnCdlwYXJm7n_MzEPhxIjyhB2k1M9EPuRP39-8AN85uBsJmWAcw/exec';
 
         const response = await fetch(scriptURL, {
             method: 'POST',
