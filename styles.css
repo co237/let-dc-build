@@ -187,7 +187,7 @@ main {
 }
 
 .form-message {
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 12px;
     text-align: center;
     font-size: 0.95rem;
@@ -199,6 +199,15 @@ main {
     background: rgba(38, 222, 129, 0.1);
     border: 1px solid rgba(38, 222, 129, 0.3);
     color: #26de81;
+}
+
+.form-message.success h3 {
+    color: #26de81;
+    font-family: 'Source Serif 4', Georgia, serif;
+}
+
+.form-message.success p {
+    color: var(--text-secondary);
 }
 
 .form-message.error {

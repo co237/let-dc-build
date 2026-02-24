@@ -36,16 +36,21 @@ document.getElementById('signup-form').addEventListener('submit', async function
 
         // Since we're using no-cors mode, we can't read the response
         // We'll assume success if no error was thrown
-        formMessage.textContent = 'Thanks for joining the movement!';
+
+        // Hide the form inputs and button
+        form.querySelector('.form-row').style.display = 'none';
+        submitBtn.style.display = 'none';
+
+        // Show success message
+        formMessage.innerHTML = '<h3 style="font-size: 2rem; margin-bottom: 0.5rem;">Submitted!</h3><p>Thanks for joining the movement.</p>';
         formMessage.className = 'form-message success';
-        form.reset();
 
     } catch (error) {
         console.error('Error:', error);
         formMessage.textContent = 'Something went wrong. Please try again.';
         formMessage.className = 'form-message error';
-    } finally {
-        // Re-enable button
+
+        // Re-enable button on error
         submitBtn.disabled = false;
         btnText.textContent = 'Submit';
     }
